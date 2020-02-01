@@ -1,8 +1,2 @@
-function foo(){
-    console.log(this.a);
-}
-var obj ={
-    a:2
-};
-var fn = foo.call(obj);
-fn();
+setTimeout(()=>{console.log("路")},1000);
+console.log("遥");
