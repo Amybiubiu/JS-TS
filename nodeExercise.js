@@ -107,3 +107,11 @@ methods.MKCOL = async function(request) {
   if (stats.isDirectory()) return {status: 204};
   else return {status: 400, body: "Not a directory"};
 };
+// $ curl http://localhost:8000/file.txt
+// File not found
+// $ curl -X PUT -d hello http://localhost:8000/file.txt
+// $ curl http://localhost:8000/file.txt
+// hello
+// $ curl -X DELETE http://localhost:8000/file.txt
+// $ curl http://localhost:8000/file.txt
+// File not found

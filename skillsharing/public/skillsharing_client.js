@@ -89,7 +89,21 @@ function renderTalk(talk, dispatch) {
     }, elt("input", {type: "text", name: "comment"}), " ",
        elt("button", {type: "submit"}, "Add comment")));
 }
-
+//
+class Talk{
+   constructor(talk, dispatch){
+     this.comment = elt("div");
+     this.dom 
+     this.syncState(talk);
+   }
+   //class shareApp 定义了同名属性
+   syncState(talk){
+     //
+    for (let comment of talk.comments){
+      //
+    }
+   }
+}
 function renderComment(comment) {
   return elt("p", {className: "comment"},
              elt("strong", null, comment.author),
@@ -115,6 +129,7 @@ function renderTalkForm(dispatch) {
 
 async function pollTalks(update) {
   let tag = undefined;
+  //不断的循环请求
   for (;;) {
     let response;
     try {
@@ -137,6 +152,8 @@ var SkillShareApp = class SkillShareApp {
   constructor(state, dispatch) {
     this.dispatch = dispatch;
     this.talkDOM = elt("div", {className: "talks"});
+    //add
+    this.talk = Object.create(null);
     this.dom = elt("div", null,
                    renderUserField(state.user, dispatch),
                    this.talkDOM,
@@ -147,11 +164,15 @@ var SkillShareApp = class SkillShareApp {
   syncState(state) {
     if (state.talks != this.talks) {
       this.talkDOM.textContent = "";
-      for (let talk of state.talks) {
-        this.talkDOM.appendChild(
-          renderTalk(talk, this.dispatch));
-      }
       this.talks = state.talks;
+      for (let talk of state.talks) {
+        //this.talkDOM.appendChild(
+        //  renderTalk(talk, this.dispatch));
+        //  
+      }
+      for (let title of Object.keys(this.talkMap)) {
+        //
+      }
     }
   }
 }
@@ -159,12 +180,15 @@ var SkillShareApp = class SkillShareApp {
 function runApp() {
   let user = localStorage.getItem("userName") || "Anon";
   let state, app;
+  //dispatch binding action
   function dispatch(action) {
     state = handleAction(state, action);
+    //class SkillShareApp 
     app.syncState(state);
   }
-
-  pollTalks(talks => {
+//pollTalks(update){ update(await response.json()) }
+// talks = response.json()
+  pollTalks(talks => { 
     if (!app) {
       state = {user, talks};
       app = new SkillShareApp(state, dispatch);
