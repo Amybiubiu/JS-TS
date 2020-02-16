@@ -14,8 +14,10 @@ body {
 
 /*
   Media
+
   Displays images and/or body content beside one
   another.
+
   Markup:
   <div class="media">
     <img class="media__image"
@@ -43,6 +45,7 @@ body {
     <img class="media__image"
       src="http://placehold.it/150x150" />
   </div>
+
   Styleguide Media
   */
 .media {
@@ -71,17 +74,21 @@ body {
 
 /*
   Buttons
+
   Buttons are available in a number of sizes and
   colors. You may mix and match any size with any
   color.
+
   Markup:
   <button class="button {{modifier_class}}">
     click here
   </button>
+
   .button--success  - A green success button
   .button--danger   - A red danger button
   .button--small    - A small button
   .button--large    - A large button
+
   Styleguide Buttons
   */
 .button {
@@ -116,13 +123,16 @@ body {
 
 /*
   Message
+
   Markup:
   <div class="message {{modifier_class}}">
     This is an important message
   </div>
+
   .message--success   - A green success message
   .message--warning   - An orange warning message
   .message--error     - A red error message
+
   Styleguide Message
   */
 .message {
@@ -153,10 +163,13 @@ body {
 
 /*
   Dropdown
+
   A dropdown menu. Clicking the toggle button opens
   and closes the drawer.
+
   Use JavaScript to toggle the `is-open` class in
   order to open and close the dropdown.
+
   Markup:
   <div class="dropdown">
     <button class="dropdown__toggle">Open menu</button>
@@ -164,6 +177,7 @@ body {
       Drawer contents
     </div>
   </div>
+
   Styleguide Dropdown
   */
 .dropdown {
@@ -206,12 +220,14 @@ body {
 
 /*
   Menu
+
   Markup:
   <ul class="menu">
     <li><a href="#">Menu item 1</a></li>
     <li><a href="#">Menu item 2</a></li>
     <li><a href="#">Menu item 3</a></li>
   </ul>
+
   Styleguide Menu
   */
 .menu {
@@ -239,10 +255,14 @@ body {
 
 /*
   Text center
+
   Center text within a block by applying `text-center`
+
   Markup:
   <p class="text-center">Centered text</p>
+
   Weight: 1
+
   Styleguide Utilities.text-center
   */
 .text-center {
@@ -251,8 +271,11 @@ body {
 
 /*
   Float left
+
   Float an element to the left with `float-left`
+
   Weight: 3
+
   Styleguide Utilities.float-left
   */
 .float-left {
@@ -261,13 +284,17 @@ body {
 
 /*
   Clearfix
+
   Add the class `clearfix` to an element to force it to
   contain its floated contents
+
   Markup:
   <div class="clearfix">
     <span class="float-left">floated</span>
   </div>
+
   Weight: 2
+  
   Styleguide Utilities.clearfix
   */
 .clearfix::before,
