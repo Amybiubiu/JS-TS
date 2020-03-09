@@ -1,2 +1,7 @@
-setTimeout(()=>{console.log("路")},1000);
-console.log("遥");
+function useless(callback){
+    return callback();
+}
+useless(()=>{console.log("callback")});
+(function fnA(){
+    console.log("fnA");
+})()
